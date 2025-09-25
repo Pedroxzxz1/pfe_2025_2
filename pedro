@@ -1,0 +1,17 @@
+def pode_usar_bicicleta_sem_capacete():
+
+    idade = int(input("Informe sua idade: "))
+
+    tem_cnh = input("Você possui CNH? (s/n): ").strip().lower()
+
+    # Lógica NAND
+
+    maior_de_idade = idade >= 18
+
+    possui_cnh = tem_cnh == 's'
+
+    if not (maior_de_idade and possui_cnh):
+        print("🟢 Você pode andar de bicicleta elétrica sem capacete.")
+    else:
+        print("🔴 Você NÃO pode andar de bicicleta elétrica sem capacete.")
+
