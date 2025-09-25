@@ -1,17 +1,23 @@
-def pode_usar_bicicleta_sem_capacete():
+def pode_sair_de_casa():
 
-    idade = int(input("Informe sua idade: "))
+    gripado = input("Você está gripado? (s/n): ").strip().lower()
 
-    tem_cnh = input("Você possui CNH? (s/n): ").strip().lower()
+    com_febre = input("Você está com febre? (s/n): ").strip().lower()
 
-    # Lógica NAND
+    # Lógica NOR
 
-    maior_de_idade = idade >= 18
+    tem_gripe = gripado == 's'
 
-    possui_cnh = tem_cnh == 's'
+    tem_febre = com_febre == 's'
 
-    if not (maior_de_idade and possui_cnh):
-        print("🟢 Você pode andar de bicicleta elétrica sem capacete.")
+    if not (tem_gripe or tem_febre):
+
+        print("🟢 Você PODE sair de casa.")
+
     else:
-        print("🔴 Você NÃO pode andar de bicicleta elétrica sem capacete.")
 
+        print("🔴 Você NÃO pode sair de casa. Fique em repouso.")
+
+# Executa a função
+
+pode_sair_de_casa()
